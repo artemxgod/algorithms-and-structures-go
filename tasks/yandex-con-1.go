@@ -64,3 +64,7 @@ func FatalOnErr(err error) {
 // Then i realized that i do not need to check array or even change it because for one time element can be
 // incremented by 1, so the min amount of action needed is 'maxval' - 'minval'. In this task max val will always be the last one
 // and min val will always be the first otherwise we cannot make elements equal (because we add acid starting from the first storage)
+
+
+
+
