@@ -11,7 +11,7 @@ func main() {
 	// arr2 := []int{5, 4, 3, 2, 1}
 	
 	log.Println(arr)
-	algorithms.MergeSort(arr)
+	algorithms.QuickSort(arr)
 	log.Println(arr)
 }
 

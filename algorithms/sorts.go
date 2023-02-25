@@ -49,7 +49,7 @@ func InsertionSort(arr []int) {
 	} 
 }
 
-// Time Complexity - O(n^2)
+// Time Complexity - O(nlog(n))
 // Merge sort divide array into smaller arrays and sorts them
 func MergeSort(arr []int) {
 	mergeReq(arr, 0, len(arr)-1) 
@@ -105,4 +105,43 @@ func merge(arr []int, start, mid, end int) {
 		j++; k++;
 	}
 }
+
+// Time complexity O(nlog(n))
+// Picks a pivot element and sort array relative to the pivot element
+func QuickSort(arr []int) {
+	quickReq(arr, 0, len(arr) - 1)
+}
+
+func quickReq(arr []int, start, end int) {
+	if start < end {
+		// splits array, puts pivot in the right place
+		pivot := partition(arr, start, end)
+		// separatly sort arrays before and after pivot
+		quickReq(arr, start, pivot - 1)
+		quickReq(arr, pivot + 1, end)
+	}
+}
+
+/* This function takes last element as pivot, places
+the pivot element at its correct position in sorted
+array, and places all smaller (smaller than pivot)
+to left of pivot and all greater elements to right
+of pivot */
+func partition(arr []int, start, end int) int {
+	// pivot element (last one)
+	pivot := arr[end]
+	// index of element where we will put elements that are less that pivot
+	i := start
+
+	for j := start; j < end; j++ {
+		if arr[j] < pivot {
+			arr[i], arr[j] = arr[j], arr[i]
+			i++
+		}
+	}
+	// put pivot in the right place
+	arr[i], arr[end] = arr[end], arr[i]
+	return i
+}
+
 
