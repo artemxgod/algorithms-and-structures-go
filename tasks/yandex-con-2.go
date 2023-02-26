@@ -109,7 +109,7 @@ func managePassangers(num int, side, position string, seats []string) (string, b
 					return fmt.Sprintf("%d%s %d%s", idx+1, "B", idx+1, "C"), true, idx
 				}
 			} else {
-				if position == "aisle" && row [4:6] == ".." {
+				if position == "aisle" && row[4:6] == ".." {
 					seats[idx] = row[:4] + "XX" + row[6:]
 					return fmt.Sprintf("%d%s %d%s", idx+1, "D", idx+1, "E"), true, idx
 				}
@@ -132,6 +132,6 @@ func managePassangers(num int, side, position string, seats []string) (string, b
 	return "", false, 0
 }
 
-// P.S though code is kinda big for an easy task like this, it works fast
-// Amount of lines can be reduced and code can be optimized, but for this specific task 
+// P.S. though code is kinda big for an easy task like this, it works fast
+// Amount of lines can be reduced and code can be optimized, but for this specific task
 // i feel like this is not that bad
