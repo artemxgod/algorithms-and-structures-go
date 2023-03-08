@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	tasks.PlaneSeats()
+	tasks.MinDistance()
 }
 
 func FatalOnErr(err error) {
