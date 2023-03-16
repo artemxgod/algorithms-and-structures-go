@@ -7,21 +7,7 @@ import (
 )
 
 func main() {
-	list := structures.List{}
-
-	list.Insert(4)
-	list.Insert(5)
-	list.Insert(123)
-	list.Insert("booga")
-	structures.PrintList(list.Head)
-	structures.PrintListBackwords(list.Tail)
-	list.Reverse()
-	list.Display()
-	list.Push("Amen")
-	list.Display()
-	structures.PrintList(list.Head)
-	structures.PrintListBackwords(list.Tail)
-	
+	structures.TestLinkedList()
 }
 
 func FatalOnErr(err error) {

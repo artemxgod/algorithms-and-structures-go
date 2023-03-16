@@ -100,7 +100,65 @@ func (l *List) Push(key interface{}) {
 	}
 
 	l.Head = hd
+}
 
-	
+func (l *List) Pop() {
+	del := l.Tail
+	l.Tail = l.Tail.prev
+	del.prev = nil
+	l.Tail.next = nil
+}
 
+func (l *List) Sort() {
+	cur := l.Head.next
+
+	for cur != nil {
+		next := cur.next
+		for next != nil && next.prev != nil {
+			if next.prev.key.(int) > next.key.(int) {
+				next.prev.key, next.key = next.key, next.prev.key
+			}
+			next = next.prev
+		}
+		cur = cur.next
+	}
+}
+
+func TestLinkedList() {
+	list := List{}
+
+	fmt.Println("=====INSERTED=====")
+	list.Insert(4)
+	list.Insert(5)
+	list.Insert(123)
+	list.Insert(8)
+	PrintList(list.Head)
+
+	fmt.Println("=====INSERTED BACKWORDS=====")
+	PrintListBackwords(list.Tail)
+
+	fmt.Println("=====REVERSED=====")
+	list.Reverse()
+	list.Display()
+
+	fmt.Println("=====REVERSED BACKWORDS=====")
+	PrintListBackwords(list.Tail)
+
+	fmt.Println("=====PUSHED=====")
+	list.Push("Amen")
+	PrintList(list.Head)
+
+	fmt.Println("=====PUSHED BACKWORDS=====")
+	PrintListBackwords(list.Tail)
+
+	fmt.Println("=====POPPED=====")
+	list.Pop()
+	list.Display()
+
+	fmt.Println("=====POPPED BACKWORDS=====")
+	PrintListBackwords(list.Tail)
+
+	fmt.Println("=====SORTED LIST=====")
+	list.Sort()
+	list.Display()
 }
