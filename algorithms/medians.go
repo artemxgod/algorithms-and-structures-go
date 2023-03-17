@@ -18,11 +18,13 @@ func medianOfMedians(sliceList []int, k, r int) int {
 	}
 
 	// creating slice of medians
+	// if len = num / r we might lose some elements, so we take len in abundance
 	medLen := (num + r - 1) / r
 	medians := make([]int, medLen)
 
 	// filling medians slice
 	for i := 0; i < medLen; i++ {
+		// seeking medians in every 'r' elements
 		v := i*r + r
 		var arr []int
 		if v >= num {
