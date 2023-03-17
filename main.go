@@ -3,11 +3,12 @@ package main
 import (
 	"log"
 
-	"github.com/artemxgod/algorithms-and-structures/structures"
+	"github.com/artemxgod/algorithms-and-structures/algorithms"
 )
 
 func main() {
-	structures.TestLinkedList()
+	// structures.TestLinkedList()
+	algorithms.TestMedians()
 }
 
 func FatalOnErr(err error) {
