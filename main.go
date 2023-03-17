@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// structures.TestLinkedList()
-	algorithms.TestMedians()
+	algorithms.TestLevenshtein()
 }
 
 func FatalOnErr(err error) {
