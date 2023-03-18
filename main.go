@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// structures.TestLinkedList()
-	algorithms.TestLevenshtein()
+	algorithms.TestKMPSearch()
 }
 
 func FatalOnErr(err error) {
