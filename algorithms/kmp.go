@@ -38,20 +38,19 @@ func KMP(str, substr string) []int {
 	if strLen == 0 || subLen == 0 || strLen < subLen {
 		return res
 	}
-
-	j := 0
-	for i := 0; i < strLen; {
-		for j > -1 && str[i] != substr[j] {
-			j = next[j]
+	matchIdx := 0
+	for strIdx := 0; strIdx < strLen; {
+		for matchIdx > -1 && str[strIdx] != substr[matchIdx] {
+			matchIdx = next[matchIdx]
 		}
-		i++
-		j++
+		strIdx++
+		matchIdx++
 
 		// if j reached the value of subLen => match was found
 		// Match starts from i-j, where i is the index where match ends
-		if j >= subLen {
-			res = append(res, i-j)
-			j = next[j]
+		if matchIdx >= subLen {
+			res = append(res, strIdx-matchIdx)
+			matchIdx = next[matchIdx]
 		}
 	}
 
@@ -92,3 +91,27 @@ func TestKMPSearch() {
 	fmt.Printf("%2d\n", KMPSearchLast("cocacola", "cx"))
 	fmt.Printf("%2d\n", KMPSearchLast("AABAACAADAABAABAAABAACAADAABAABA", "AABA"))
 }
+
+// Some example of how it works
+// txt = “AAAAABAAABA”
+// pat = “AAAA”
+
+// We compare first window of txt with pat
+
+// txt = “AAAAABAAABA”
+// pat = “AAAA”  [Initial position]
+// We find a match. This is same as Naive String Matching.
+
+// In the next step, we compare next window of txt with pat.
+
+// txt = “AAAAABAAABA”
+// pat =  “AAAA” [Pattern shifted one position]
+
+// This is where KMP does optimization over Naive. In this second window, we only compare fourth A of pattern
+// with fourth character of current window of text to decide whether current window matches or not. Since we know
+// first three characters will anyway match, we skipped matching first three characters.
+
+// Need of Preprocessing?
+
+// An important question arises from the above explanation, how to know how many characters to be skipped. To know this,
+// we pre-process pattern and prepare an integer array lps[] that tells us the count of characters to be skipped
