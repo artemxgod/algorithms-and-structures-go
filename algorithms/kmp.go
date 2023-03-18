@@ -115,3 +115,6 @@ func TestKMPSearch() {
 
 // An important question arises from the above explanation, how to know how many characters to be skipped. To know this,
 // we pre-process pattern and prepare an integer array lps[] that tells us the count of characters to be skipped
+
+// P.S.S the previous explaination and funcion that i wrote are antinomies: function finds only non-crossing matches,
+// while the conception in the explaination is about find every possible matches
