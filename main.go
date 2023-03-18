@@ -3,12 +3,12 @@ package main
 import (
 	"log"
 
-	"github.com/artemxgod/algorithms-and-structures/structures"
+	"github.com/artemxgod/algorithms-and-structures/concurrency"
 )
 
 func main() {
 	// structures.TestLinkedList()
-	structures.TestGenerics()
+	concurrency.TestSelection()
 }
 
 func FatalOnErr(err error) {
