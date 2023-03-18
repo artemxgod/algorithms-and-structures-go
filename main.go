@@ -3,12 +3,12 @@ package main
 import (
 	"log"
 
-	"github.com/artemxgod/algorithms-and-structures/algorithms"
+	"github.com/artemxgod/algorithms-and-structures/structures"
 )
 
 func main() {
 	// structures.TestLinkedList()
-	algorithms.TestKMPSearch()
+	structures.TestGenerics()
 }
 
 func FatalOnErr(err error) {
