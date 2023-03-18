@@ -118,3 +118,4 @@ func TestKMPSearch() {
 
 // P.S.S the previous explaination and funcion that i wrote are antinomies: function finds only non-crossing matches,
 // while the conception in the explaination is about find every possible matches
+// The moral is golangprograms is not the best website for studying golang (no explaintation, mostly no comments, etc) 
