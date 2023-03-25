@@ -133,6 +133,9 @@ func TestCancelCtx() {
 	cancelCtx(ctx)
 }
 
+// -- CONTEXT CANCELATION WITH DEADLINE --
+
+// context with deadline cancels after deadline exceeded
 func deadlineCtx(ctx context.Context) {
 	// setting a deadline
 	deadline := time.Now().Add(time.Millisecond * 1500)
@@ -161,6 +164,7 @@ func deadlineCtx(ctx context.Context) {
 	fmt.Printf("DeadlineCtx: finished\n")
 }
 
+// Test context.WithDeadline func
 func TestDeadlineCtx() {
 	deadlineCtx(context.Background())
 }
