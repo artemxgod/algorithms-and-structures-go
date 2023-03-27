@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// structures.TestLinkedList()
-	packages.TestDeadlineCtx()
+	packages.TestProtoBuf()
 }
 
 func FatalOnErr(err error) {

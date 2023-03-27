@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package packages;
+
+option go_package = "./packages";
+
+message SocialFollowers {
+    int32 twitter = 1;
+    int32 youtube = 2;
+}
+
+message Person {
+    string name = 1;
+    int32 age = 2;
+    SocialFollowers socialfollowers = 3;
+}
