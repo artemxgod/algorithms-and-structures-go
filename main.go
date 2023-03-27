@@ -3,12 +3,12 @@ package main
 import (
 	"log"
 
-	"github.com/artemxgod/algorithms-and-structures/concurrency"
+	"github.com/artemxgod/algorithms-and-structures/toolbox/cmd"
 )
 
 func main() {
 	// structures.TestLinkedList()
-	concurrency.TestRWMutexLock()
+	cmd.Execute()
 }
 
 func FatalOnErr(err error) {
