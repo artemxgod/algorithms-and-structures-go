@@ -3,13 +3,14 @@ package main
 import (
 	"log"
 
-	"github.com/artemxgod/algorithms-and-structures/structures"
+	"github.com/artemxgod/algorithms-and-structures/packages"
 )
 
 func main() {
 	// structures.TestLinkedList()
 	// cmd.Execute()
-	structures.BitOperators()
+	// structures.BitOperators()
+	packages.Poll()
 }
 
 func FatalOnErr(err error) {
